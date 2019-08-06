@@ -185,6 +185,10 @@ module OAuth2
       @assertion ||= OAuth2::Strategy::Assertion.new(self)
     end
 
+    def refresh_token
+      @refresh_token ||= OAuth2::Strategy::RefreshToken.new(self)
+    end
+
     # The redirect_uri parameters, if configured
     #
     # The redirect_uri query parameter is OPTIONAL (though encouraged) when
